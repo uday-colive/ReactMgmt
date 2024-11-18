@@ -2,7 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from './screens/pages/Home/HomePage';
+import HomePage from './screens/pages/home/HomePage';
+import PropertySearchPage from './screens/pages/propertySearch/PropertySearchPage';
+import BiddingScreen from './screens/pages/biddingScreen/BiddingScreen';
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,8 @@ function App() {
           <Route path="*" element={<NoPage />} /> */}
         </Route>
         {/* <Route path="/detail" element={<PageComponent />} /> */}
+        <Route path="/propertySearch" element={<PropertySearchPage />}/>
+        <Route path="/bidsummary" element={<BiddingScreen />}/>
       </Routes>
     </BrowserRouter>
     </div>

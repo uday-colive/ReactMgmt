@@ -5,11 +5,25 @@ export interface GetTrendingList_v2Output {
   }
   
   export interface Data {
-    micromarketdetails: Micromarketdetail[]
-    propertydetails: any
+    micromarketdetails: MicroMarketDetail[]
+    details: CityDetail[]
+  }
+
+  export interface CityDetail {
+    SortOrder: number;
+    City: string;
+    CityId: number;
+    ShortName: string;
+    AverageRent: number;
+    AgreedBidValue: number;
+    Trend: number;
+    BiddingCount: number;
+    BiddingTrend: number;
+    MicroMarketCount: number;
+    BannerImage: string;
   }
   
-  export interface Micromarketdetail {
+  export interface MicroMarketDetail {
     SortOrder: number
     City: string
     CityId: number

@@ -2,6 +2,34 @@
     "Status": "success",
     "Message": "Details Fetched Successfully !",
     "Data": {
+        "details": [
+            {
+                "SortOrder": 1,
+                "City": "Bangalore",
+                "CityId": 2847,
+                "ShortName": "",
+                "AverageRent": 36340.0,
+                "AgreedBidValue": 7449.0,
+                "Trend": 0.80,
+                "BiddingCount": 0,
+                "BiddingTrend": 0.00,
+                "MicroMarketCount": 20,
+                "BannerImage": "https://www.colive.com/utility/files/Branding/Mob_Banner_June(1)_20210623021626_20230518174915446.jpg"
+            },
+            {
+                "SortOrder": 3,
+                "City": "Pune",
+                "CityId": 3151,
+                "ShortName": "",
+                "AverageRent": 26000.0,
+                "AgreedBidValue": 0.0,
+                "Trend": 0.01,
+                "BiddingCount": 0,
+                "BiddingTrend": 0.00,
+                "MicroMarketCount": 1,
+                "BannerImage": "https://www.colive.com/utility/files/Branding/Mob_Banner_June(1)_20210623021626_20230518174915446.jpg"
+            }
+        ],
         "micromarketdetails": [
             {
                 "SortOrder": 0,
