@@ -3,15 +3,22 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import ChartComponent from "../Components/ChartComponent";
 
 function Home() {
-  var [name, setName] = useState("Udaya");
+  var [name, setName] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {}, []);
 
-  const handleClick = () => {
+  const handleClick = (value) => {
     setName("Udayakumar");
-    navigate("/detail", { state: { name: "sajja" } });
+    //navigate("/detail", { state: { name: value } });
   };
+
+  useEffect(() => {
+    if (name !== null) {
+      // Perform redirection after state update
+       navigate("/detail", { state: { name: name } });
+    }
+  }, [name, navigate]);
 
   const createView = () => {
     let rows = [];
@@ -19,7 +26,7 @@ function Home() {
       rows.push(
         <div>
           <a href="https://www.google.com">{name}</a>
-          <button onClick={handleClick}>Click Me</button>
+          <button onClick={() => handleClick(i)}>Click Me</button>
           {/* <Link
             to={{
               pathname: "/detail",

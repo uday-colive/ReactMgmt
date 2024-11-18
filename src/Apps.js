@@ -9,6 +9,9 @@ import Blogs from "./Pages/Blogs";
 import Contact from "./Pages/Contact";
 import NoPage from "./Pages/NoPage";
 import PageComponent from "./Components/PageComponent";
+import RentXHome from "./Pages/RentXHome";
+import HomePage from "./screens/pages/Home/HomePage";
+ 
 
 function App() {
   return (
@@ -18,13 +21,13 @@ function App() {
     // </div>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="home" index element={<Home />} />
+        <Route path="/" element={<HomePage />}>
+          {/* <Route path="home" index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="*" element={<NoPage />} /> */}
         </Route>
-        <Route path="/detail" element={<PageComponent />} />
+        {/* <Route path="/detail" element={<PageComponent />} /> */}
       </Routes>
     </BrowserRouter>
   );
