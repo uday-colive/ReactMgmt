@@ -1,15 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom/client"; // Use React 18's new root API
-import "./index.css"; // Optional: add global styles for your app
-import App from "./App"; // Import your main App component
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-// Create the root and render the App component inside it
-const rootElement = document.getElementById("root") as HTMLElement; // Get the root element from the HTML
-const root = ReactDOM.createRoot(rootElement);
-
-// Render the App component
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

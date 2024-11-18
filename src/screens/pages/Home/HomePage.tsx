@@ -3,16 +3,22 @@ import BannerComponent from "./Components/BannerComponent";
 import SearchbarComponent from "./Components/SearchbarComponent";
 import MicromarketListComponent from "./Components/MicromarketListComponent";
 import GetTrendingList_v2 from "../../../JSON/GetTrendingList_v2.json";
-import {GetTrendingList_v2Output} from "../../../JSON/GetTrendingList_v2Model";
-import { Container } from "react-dom";
+import { GetTrendingList_v2Output, Micromarketdetail } from "../../../JSON/GetTrendingList_v2Model";
+ 
 function HomePage() {
-  
-  var [GetTrendingListResponse, SetGetTrendingListResponse] = useState<GetTrendingList_v2Output>();
+  var [GetTrendingListResponse, SetGetTrendingListResponse] =
+    useState<Micromarketdetail[]>();
 
   const loadData = () => {
-    const response:GetTrendingList_v2Output = GetTrendingList_v2; 
-    
-    SetGetTrendingListResponse(response);
+    const response: GetTrendingList_v2Output = GetTrendingList_v2;
+    // var value: Micromarketdetail[]  = response.Data.micromarketdetails.filter(x=>{
+    //   x.City="Bangalore"
+    // })
+    SetGetTrendingListResponse(response.Data.micromarketdetails);
+  };
+
+  const getSelectArea = (area: String) => {
+    console.log(`selected are is:${area}`);
   };
 
   useEffect(() => {
@@ -20,14 +26,15 @@ function HomePage() {
   }, []);
 
   return (
-    <div>
-      <p>number of micro markets </p>
+    <div> 
       <BannerComponent />
       <SearchbarComponent />
-      <MicromarketListComponent microdata={GetTrendingListResponse?.Data.micromarketdetails} />
+      <MicromarketListComponent
+        toChild={GetTrendingListResponse}
+        fromChild={getSelectArea}
+      />
     </div>
-     
-  )
+  );
 }
 
 export default HomePage;

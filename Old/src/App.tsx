@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './screens/pages/Home/HomePage';
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-     <BrowserRouter>
+    <div>
+      <h1>Trending List App</h1>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />}>
           {/* <Route path="home" index element={<Home />} />
@@ -19,6 +19,6 @@ function App() {
     </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
